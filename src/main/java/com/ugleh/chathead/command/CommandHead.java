@@ -36,7 +36,7 @@ public class CommandHead implements CommandExecutor {
                     playerUsage.put(p.getUniqueId(), unixTime);
                 }else {
 
-                    p.sendMessage(String.format(ChatHead.getInstance().getLanguageNode("language.cooldown"), timeLeft));
+                    p.sendMessage(ChatHead.getInstance().getLanguageNode("language.prefix") + String.format(ChatHead.getInstance().getLanguageNode("language.cooldown"), timeLeft));
                     return true;
                 }
             }else {
@@ -85,11 +85,12 @@ public class CommandHead implements CommandExecutor {
     }
 
     private void notPlayer(CommandSender commandSender) {
-        commandSender.sendMessage("You must be a player.");
+        commandSender.sendMessage(ChatHead.getInstance().getLanguageNode("language.prefix") + ChatHead.getInstance().getLanguageNode("language.no-permission"));
     }
 
     private boolean noPermission(CommandSender commandSender) {
-        commandSender.sendMessage("You do not have permission.");
+        commandSender.sendMessage(ChatHead.getInstance().getLanguageNode("language.prefix") + ChatHead.getInstance().getLanguageNode("language.not-player"));
+        commandSender.sendMessage(ChatHead.getInstance().getLanguageNode("language.prefix") + ChatHead.getInstance().getLanguageNode("language.usage"));
         return true;
     }
 }
