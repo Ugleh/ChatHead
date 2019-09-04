@@ -1,0 +1,22 @@
+name: ChatHead
+main: com.ugleh.chathead.ChatHead
+version: "1.0.0"
+api-version: "1.13"
+description: Print your own head in chat
+commands:
+  chathead:
+    description: Prints your head in chat
+    usage: true
+    permission: chathead.chathead.use
+  chathelm:
+    description: Prints your head with helmet in chat
+    usage: true
+    permission: chathead.chathelm.use
+permissions:
+  chathead.*:
+    default: op
+    children:
+      chathead.chathelm.use:
+        default: true
+      chathead.chathead.use:
+        default: true

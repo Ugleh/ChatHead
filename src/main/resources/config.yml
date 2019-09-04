@@ -1,0 +1,9 @@
+config.enable-metrics: true
+config.image-scale: 8
+config.print-character: ⬛
+config.usage-cooldown: 10
+language.prefix: "&6[&2ChatHead&6]"
+language.no-permission: "&c You do not have permission to use that command."
+language.cooldown: "&c You must wait &6%s&c seconds to do that again."
+language.not-player: "&c You must be in-world to use this command without the <player> argument."
+language.usage: "/[head/helm] <player>"
