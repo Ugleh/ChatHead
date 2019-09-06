@@ -17,7 +17,7 @@ public class ChatHead extends JavaPlugin {
     private String printCharacter = "⬛";
     private Map<String, String> languageNodes = new HashMap<>();
     private static ChatHead instance;
-
+    private String prefix;
     @Override
     public void onEnable() {
         setInstance(this);
@@ -36,6 +36,8 @@ public class ChatHead extends JavaPlugin {
         imageScale = this.getConfig().getInt("config.image-scale");
         printCharacter = this.getConfig().getString("config.print-character");
         enableMetrics = this.getConfig().getBoolean("config.enable-metrics");
+        prefix = ChatColor.translateAlternateColorCodes('&', this.getConfig().getString("language.prefix"));
+
         for (String language : Objects.requireNonNull(this.getConfig().getConfigurationSection("language"), "language node not found.").getKeys(false)) {
             languageNodes.put("language." + language, this.getConfig().getString("language." + language));
         }
@@ -63,5 +65,12 @@ public class ChatHead extends JavaPlugin {
 
     public String getPrintCharacter() {
         return printCharacter;
+    }
+
+    public String getPrefix() {
+        return prefix;
+    }
+    public String getMessageNode(String node) {
+        return getLanguageNode(node).replace("{prefix}", prefix);
     }
 }

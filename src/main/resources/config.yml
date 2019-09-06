@@ -3,7 +3,12 @@ config.image-scale: 8
 config.print-character: ⬛
 config.usage-cooldown: 10
 language.prefix: "&6[&2ChatHead&6]"
-language.no-permission: "&c You do not have permission to use that command."
-language.cooldown: "&c You must wait &6%s&c seconds to do that again."
-language.not-player: "&c You must be in-world to use this command without the <player> argument."
-language.usage: "/[head/helm] <player>"
+language.no-permission: "{prefix} &c You do not have permission to use that command."
+language.cooldown: "{prefix} &c You must wait &6{seconds}&c second!s to do that again."
+language.not-player: "{prefix} &c You must be in-world to use this command without the <player> argument."
+language.pre-head-self: ""
+language.pre-head-other: ""
+language.head: "{prefix} {head-column}"
+language.post-head-self: "{prefix} {sent_player} sent a chat head of themselves."
+language.post-head-other: "{prefix} {sent_player} sent a chat head of {head_player}."
+language.usage: "{prefix} /[head/helm] <player>"
