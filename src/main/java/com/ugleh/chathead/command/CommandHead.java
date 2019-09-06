@@ -88,7 +88,8 @@ public class CommandHead implements CommandExecutor {
                         chatHeadString.append(chatColor).append(ChatHead.getInstance().getPrintCharacter());
                     }
                     for (Player player : Bukkit.getOnlinePlayers()) {
-                        player.sendMessage(chatHeadString.toString());
+                        String message = ChatHead.getInstance().getMessageNode("language.head").replace("{head_column}", chatHeadString.toString());
+                        player.sendMessage(message);
                     }
                 }
 

@@ -8,7 +8,7 @@ language.cooldown: "{prefix} &c You must wait &6{seconds}&c second!s to do that 
 language.not-player: "{prefix} &c You must be in-world to use this command without the <player> argument."
 language.pre-head-self: ""
 language.pre-head-other: ""
-language.head: "{prefix} {head-column}"
+language.head: "{prefix} {head_column}"
 language.post-head-self: "{prefix} {sent_player} sent a chat head of themselves."
 language.post-head-other: "{prefix} {sent_player} sent a chat head of {head_player}."
 language.usage: "{prefix} /[head/helm] <player>"
